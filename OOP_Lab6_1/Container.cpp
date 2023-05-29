@@ -1,6 +1,17 @@
 #include "Container.h"
 
 
+Container::Container()
+{
+}
+
+Container::Container(SmallWall* sWall1, BigWall* bWall1, Karkas* kark1)
+{
+	this->bWall = bWall1;
+	this->sWall = sWall1;
+	this->kark = kark1;
+}
+
 double Container::space_obem()
 {
 	return this->space;
@@ -86,6 +97,14 @@ void Container::print_information_c(int tip)
 vector<Parcel> Container::get_inf_parcel()
 {
 	return this->parce;
+}
+
+void Container::print_wall_karkas()
+{
+	cout << "Параметры построенного контейнера: ";
+	cout << "\nВысота контейнера: " << this->sWall->get_dlina();
+	cout << "\nШирина контейнера: " << this->sWall->get_shirina();
+	cout << "\nДлина контейнера: "  << this->bWall->get_shirina();
 }
 
 /*

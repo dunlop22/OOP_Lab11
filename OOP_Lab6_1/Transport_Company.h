@@ -24,7 +24,7 @@
 #include "AbstractFactory.h"	//абстрактная фабрика (LR9-10)
 #include "PoolDangerCont.h"		//пул опасных контейнеров (LR9-10)
 #include "FactoryMethod.h"		//фабричный метод (LR9-10)
-
+#include "Director.h"			//строитель (LR11)
 using namespace std;
 class Transport_Company
 {

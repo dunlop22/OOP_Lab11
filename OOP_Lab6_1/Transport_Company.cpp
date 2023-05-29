@@ -38,7 +38,7 @@ void Transport_Company::start_work()
 4) Абстрактная фабрика (Посылка + коробка)\n\
 5) Прототип (Журнал, Письмо)\n\
 6) Пул опасных контейнеров\n\
-7) Фабричный метод\n\
+7) Строитель контейнеров\n\
 ESC) Выход\n\nОбщее количество посылок на данный момент: " << parcel_spisok.size() << "\nОбщее количество контейнеров на данный момент: " << container_spisok.size() << "\n";
             func = _getch();
         } while (func < 49 || func > 55 && func != 27);
@@ -401,15 +401,28 @@ ESC) Выход\n\nОбщее количество посылок на данный момент: " << parcel_spisok.size
             _getch();
             delete pool_cont;
         }
-        else if (func == 55)        //Фабричный метод
+        else if (func == 55)       //строитель 
         {
             system("cls");      //очистка экрана консоли
-            FactoryMethod *factr_meth = new FactoryMethod();
+            
+            Builder* buil = new Builder();
+            Director* direc = new Director(buil);
+
+            Container* cont_build = direc->Contruct_Cont();
+            cont_build->print_wall_karkas();
+            delete cont_build;
+            delete buil;
+            delete direc;
+
+            /*      //Фабричный метод
+            FactoryMethod* factr_meth = new FactoryMethod();
             PoolDangerCont* new_full_pool = factr_meth->new_full_pool();
-            cout << "\n\nДля продолжения нажмите любую клавишу\n";
-            _getch();
+            
             delete factr_meth;
             delete new_full_pool;
+            */
+            cout << "\n\nДля продолжения нажмите любую клавишу\n";
+            _getch();
         }
         delete rus;
     } while (func != 27);

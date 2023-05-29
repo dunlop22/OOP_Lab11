@@ -2,6 +2,9 @@
 #include <string>
 #include "Parcel.h"	
 #include <vector>
+#include "SmallWall.h"
+#include "BigWall.h"
+#include "Karkas.h"
 
 using namespace std;
 
@@ -15,7 +18,9 @@ class Container
 	string town;	//направление контейнера
 	vector<Parcel> parce;
 	int kol_vo_parcel = 0;		//Общее количество посылок в контейнере
-	
+	Karkas* kark;
+	BigWall* bWall;
+	SmallWall* sWall;
 
 public:
 	double cost = 0;
@@ -30,6 +35,8 @@ protected:
 	double space;
 
 public:
+	Container();
+	Container(SmallWall* sWall1, BigWall* bWall1, Karkas* kark1);
 	virtual double space_obem();
 	virtual int gen_vid_transporta();	//генерация варианта отправки
 	virtual bool check_danger();
@@ -40,7 +47,8 @@ public:
 	virtual int get_id();
 	virtual void print_information_c(int tip);
 	virtual vector<Parcel> get_inf_parcel();
-	void get_cost_cont();
+	void print_wall_karkas();
+	//void get_cost_cont();
 };
 
 //контейнер делегат транспортное средство
