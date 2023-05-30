@@ -424,6 +424,6 @@ ESC) Выход\n\nОбщее количество посылок на данный момент: " << parcel_spisok.size
             cout << "\n\nДля продолжения нажмите любую клавишу\n";
             _getch();
         }
-        delete rus;
     } while (func != 27);
+    delete rus;
 }

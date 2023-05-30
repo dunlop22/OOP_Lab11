@@ -172,6 +172,7 @@
     <ClCompile Include="SmallWall.cpp" />
     <ClCompile Include="Small_Cont.cpp" />
     <ClCompile Include="Solver.cpp" />
+    <ClCompile Include="StateCont.cpp" />
     <ClCompile Include="Transport.cpp" />
     <ClCompile Include="Transport_Company.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="SmallWall.h" />
     <ClInclude Include="Small_Cont.h" />
     <ClInclude Include="Solver.h" />
+    <ClInclude Include="StateCont.h" />
     <ClInclude Include="Transport.h" />
     <ClInclude Include="Transport_Company.h" />
     <ClInclude Include="Wall.h" />
